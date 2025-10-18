@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-4 bg-white rounded shadow-sm">
+  <h1 class="mb-3">Welcome to MoneySkills</h1>
+  <p>Simple money skills for families: make a budget, see where money goes, and plan savings.</p>
+  <p>
+    <a class="btn btn-primary" href="{{ url_for('main.budget') }}">Start Budgeting</a>
+    <a class="btn btn-secondary" href="{{ url_for('main.lessons') }}">Read Lessons</a>
+    <a class="btn btn-info" href="/dashboard/">Open Dashboard</a>
+  </p>
+</div>
+{% endblock %}

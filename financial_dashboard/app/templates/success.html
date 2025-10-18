@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-4 bg-white rounded shadow-sm">
+  <h2>Budget Saved</h2>
+  <p><strong>{{ budget.name }}</strong> — {{ budget.month }} / {{ budget.year }}</p>
+  <p>Income: {{ budget.income }}</p>
+  <h5>Expenses</h5>
+  <ul>
+    {% for e in budget.expenses %}
+      <li>{{ e.category }}: {{ "%.2f"|format(e.amount) }}</li>
+    {% endfor %}
+  </ul>
+  <p>
+    <a class="btn btn-primary" href="{{ url_for('main.export_csv', budget_id=budget.id) }}">Download CSV</a>
+    <a class="btn btn-secondary" href="{{ url_for('main.budget') }}">Create another</a>
+  </p>
+</div>
+{% endblock %}
